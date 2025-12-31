@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PyPing Dashboard - Modern Network Diagnostics</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PyPing Dashboard</h1>
+            <p style="color: var(--text-secondary)">Professional Network Monitoring & Diagnostics</p>
+        </header>
+
+        <div class="dashboard-grid">
+            <!-- Sidebar / Control Panel -->
+            <div class="card">
+                <div class="card-title">
+                    <i class="fas fa-terminal"></i> New Ping Test
+                </div>
+                <form id="ping-form">
+                    <div class="input-group">
+                        <label for="host">Target Host / IP</label>
+                        <input type="text" id="host" placeholder="google.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="count">Packet Count</label>
+                        <input type="number" id="count" value="4">
+                    </div>
+                    <div class="input-group">
+                        <label for="size">Packet Size (Bytes)</label>
+                        <input type="number" id="size" value="32">
+                    </div>
+                    <button type="submit" id="submit-btn">Start Diagnosis</button>
+                    <button type="button" id="stop-btn" style="background: var(--danger-color); display: none;">Stop Test</button>
+                </form>
+
+                <div class="stats-grid" id="current-stats">
+                    <div class="stat-item">
+                        <div class="stat-value" id="stat-latency">-</div>
+                        <div class="stat-label">Avg RTT (ms)</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="stat-loss">-</div>
+                        <div class="stat-label">Loss %</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terminal / Results Panel -->
+            <div class="card">
+                <div class="card-title">
+                    <i class="fas fa-microchip"></i> Live Output
+                </div>
+                <div class="output-window" id="output">
+                    <div class="output-line">System ready. Enter a host to begin monitoring.</div>
+                </div>
+                
+                <div style="margin-top: 2rem;">
+                    <div class="card-title"><i class="fas fa-history"></i> Recent History</div>
+                    <div style="max-height: 300px; overflow-y: auto;">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Target</th>
+                                    <th>Avg RTT</th>
+                                    <th>Loss</th>
+                                    <th>Timestamp</th>
+                                </tr>
+                            </thead>
+                            <tbody id="history-body">
+                                <!-- History items will be injected here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

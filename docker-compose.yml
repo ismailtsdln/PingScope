@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  pyping-web:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    environment:
+      - FLASK_ENV=development
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    restart: always

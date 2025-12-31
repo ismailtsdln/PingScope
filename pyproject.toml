@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyping-tool"
+version = "1.0.0"
+authors = [
+  { name="Ismail Tasdelen", email="pentestdatabase@gmail.com" },
+]
+description = "A modernized cross-platform ping test tool written in Python."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "colorama",
+    "rich",
+    "matplotlib",
+    "Flask",
+    "flask-socketio",
+    "pyyaml",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/ismailtasdelen/PyPing"
+"Bug Tracker" = "https://github.com/ismailtasdelen/PyPing/issues"
+
+[project.scripts]
+pyping = "source.ping_test_tool:ping_test"

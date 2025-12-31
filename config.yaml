@@ -1,0 +1,22 @@
+# PyPing Default Configuration
+ping:
+  count: 4
+  size: 32
+  timeout: 2
+  interval: 1
+
+scanner:
+  threads: 10
+  timeout: 1
+
+history:
+  enabled: true
+  limit: 50
+
+logging:
+  level: INFO
+  path: "~/.pyping_logs/pyping.log"
+
+ui:
+  theme: dark
+  show_spinner: true
