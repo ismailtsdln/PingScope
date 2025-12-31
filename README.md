@@ -4,7 +4,7 @@
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Platform](https://img.shields.io/badge/platform-linux%20%7C%20macos%20%7C%20windows-lightgrey.svg)
 
-PyPing is a modern, feature-rich, and visually enhanced version of the classic ping tool. It allows you to perform advanced network diagnostics via both a professional CLI and a sleek web dashboard.
+PingScope is a modern, feature-rich, and visually enhanced version of the classic ping tool. It allows you to perform advanced network diagnostics via both a professional CLI and a sleek web dashboard.
 
 ## ✨ Features
 
@@ -31,7 +31,7 @@ PyPing is a modern, feature-rich, and visually enhanced version of the classic p
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/ismailtasdelen/PyPing.git
+git clone https://github.com/ismailtsdln/PingScope.git
 cd PyPing
 ```
 
